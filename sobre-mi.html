@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí — César Díaz Vásquez</title>
+<meta name="description" content="Diseñador gráfico y digital — trayectoria, formación y forma de trabajo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --surface:#FFFFFF;
+    --text:#1E2124;
+    --text-muted:#6B7076;
+    --border:#E6E3DC;
+    --accent:#4F46E5;
+    --accent-dark:#3F37C9;
+    --accent-soft:#EEF0FD;
+    --accent-2:#F4722B;
+    --accent-2-soft:#FEF0E6;
+    --radius:12px;
+    --radius-sm:8px;
+    --shadow:0 2px 10px rgba(30,33,36,0.05);
+    --shadow-md:0 8px 28px rgba(30,33,36,0.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#17181B; --surface:#1F2124; --text:#F2F1EE; --text-muted:#A7ACB1;
+      --border:#2E3135; --accent:#7C75F0; --accent-dark:#9892FF; --accent-soft:#272546;
+      --accent-2:#FF8A52; --accent-2-soft:#3A2619;
+      --shadow:0 2px 10px rgba(0,0,0,0.3); --shadow-md:0 8px 28px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#17181B; --surface:#1F2124; --text:#F2F1EE; --text-muted:#A7ACB1;
+    --border:#2E3135; --accent:#7C75F0; --accent-dark:#9892FF; --accent-soft:#272546;
+    --accent-2:#FF8A52; --accent-2-soft:#3A2619;
+    --shadow:0 2px 10px rgba(0,0,0,0.3); --shadow-md:0 8px 28px rgba(0,0,0,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;margin:0;color:var(--text);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block;}
+  .section-head{max-width:640px;margin-bottom:34px;}
+  .section-head h2{font-size:26px;font-weight:700;}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(250,250,247,.88);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) header{background:rgba(23,24,27,.88);} }
+  :root[data-theme="dark"] header{background:rgba(23,24,27,.88);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto;}
+  .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:16px;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:500;}
+  .nav-links a{color:var(--text-muted);transition:color .15s;}
+  .nav-links a:hover, .nav-links a.active{color:var(--accent);}
+  .nav-cta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:600;white-space:nowrap;}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;}
+
+  .about-hero{display:flex;gap:40px;align-items:center;padding:64px 0 20px;flex-wrap:wrap;}
+  .avatar{
+    width:140px;height:140px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:40px;
+    box-shadow:var(--shadow-md);
+  }
+  .about-body{flex:1;min-width:280px;}
+  .about-body h1{font-size:30px;margin-bottom:14px;}
+  .about-body p{font-size:15px;color:var(--text-muted);margin:0 0 12px;}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .edu-item{border-bottom:1px solid var(--border);padding:16px 0;}
+  .edu-item:last-child{border-bottom:none;padding-bottom:0;}
+  .edu-item:first-child{padding-top:0;}
+  .edu-item h4{font-size:15px;margin-bottom:3px;}
+  .edu-item p{font-size:13px;color:var(--text-muted);margin:0;}
+
+  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-size:12.5px;color:var(--text-muted);}
+
+  @media(max-width:680px){
+    .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--surface);flex-direction:column;padding:20px 24px;border-bottom:1px solid var(--border);display:none;gap:16px;}
+    .nav-links.open{display:flex;}
+    .burger{display:block;}
+    .nav-cta{display:none;}
+    .about-hero{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="index.html">César Díaz <span>— Diseño &amp; Web</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#proyectos">Proyectos</a>
+      <a href="sobre-mi.html" class="active">Sobre mí</a>
+      <a href="index.html#sec-servicios">Servicios</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+    <a class="nav-cta" href="index.html#contacto">Hablemos</a>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="about-hero">
+    <div class="avatar">CD</div>
+    <div class="about-body">
+      <span class="eyebrow">Sobre mí</span>
+      <h1>César Díaz Vásquez</h1>
+      <p>Diseñador gráfico y digital con experiencia en comunicación visual para campañas, redes sociales, web, mailing, material impreso y soportes presenciales. Desde 2020 formo parte del equipo de diseño dentro de la Dirección de Marketing y Admisión de IP San Sebastián, colaborando con agencias, proveedores y equipos multidisciplinarios en campañas de admisión, educación continua y proyectos institucionales.</p>
+      <p>Interés profesional en branding, dirección visual, diseño digital y marketing — explorando también IA generativa aplicada al diseño.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cómo trabajo</span>
+      <h2>Proceso y forma de colaborar</h2>
+    </div>
+    <div class="card">
+      <p style="margin:0;font-size:14.5px;color:var(--text-muted);">Experiencia en WordPress, producción gráfica, coordinación de implementaciones (imprentas, proveedores de montaje, productoras audiovisuales) y resguardo de la coherencia visual de marca en proyectos de alto alcance.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Formación</span>
+      <h2>Educación y certificaciones</h2>
+    </div>
+    <div class="card">
+      <div class="edu-item">
+        <h4>Diseño Gráfico Profesional</h4>
+        <p>I.P. AIEP · 2009 – 2012</p>
+      </div>
+      <div class="edu-item">
+        <h4>Administración de Redes Computacionales</h4>
+        <p>DuocUC · 2005 – 2007</p>
+      </div>
+      <div class="edu-item">
+        <h4>Formación complementaria</h4>
+        <p>Curso UI — Programadores Chile (2018) · Curso UX — Coderhouse (2017) · Workshop WordPress — AIEP (2015)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Trayectoria</span>
+      <h2>Experiencia anterior</h2>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);max-width:640px;">AIEP — Ejecutivo de Matrícula (2012–2015) · Servicio País — Práctica Profesional (2012–2013) · Globalneting — Práctica Técnica de Diseño (2011)</p>
+  </div>
+</section>
+
+<footer>© 2026 César Díaz Vásquez</footer>
+
+<script>
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
